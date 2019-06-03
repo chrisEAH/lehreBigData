@@ -2,28 +2,7 @@ version: '3.1'
 services:
 
   mongo:
-    image: mongo:4.1
+    image: paua/mongo
     restart: always
     ports:
       - 27017:27017
-    volumes: 
-      - mongo:/data/db
-    networks:
-      main:
-        aliases: ['mongo']
-
-  mongo-express:
-    image: mongo-express
-    restart: always
-    ports:
-      - 8081:8081
-    networks:
-      main:
-        aliases: ['express']
-
-volumes:
-  mongo:
-
-networks:
-  main:
-
